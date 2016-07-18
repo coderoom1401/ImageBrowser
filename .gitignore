@@ -1,0 +1,8 @@
+*.iml
+.idea/
+build/
+ImageBrowser.iml
+*.DS_Store
+imagebrowser/libs/
+imagebrowser/src/main/res/drawable/
+local.properties
