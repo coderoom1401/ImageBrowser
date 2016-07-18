@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://172.16.10.156:8081/nexus/content/groups/mobile"
+        }
+    }
+    dependencies {
+        classpath 'me.ele:eradle:1.5.4'
+    }
+}
+apply plugin: 'eradle'
+extraArchive {
+    sources = false
+}
+
+modifyPom {
+    project {
+        //required below
+        groupId = 'me.ele'
+        artifactId = 'imagebrowser'
+        version = android.defaultConfig.versionName
+        packaging = 'aar'
+    }
+}
+
+nexus {
+    repositoryUrl "http://172.16.10.156:8081/nexus/content/repositories/android/"
+}
